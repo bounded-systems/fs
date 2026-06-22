@@ -1,6 +1,6 @@
 {
   "name": "@bounded-systems/fs",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Filesystem capability seam; the one allowed filesystem-access point with an injectable FileSystem",
   "bounded": {
     "tagline": "Filesystem capability seam; the one allowed filesystem-access point with an injectable FileSystem",
