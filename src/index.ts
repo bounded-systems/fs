@@ -18,15 +18,23 @@
  */
 import * as fs from "node:fs";
 
+/** Minimal stat of a path read through the filesystem seam. */
 export type FileStat = {
   /** Size in bytes. */
   sizeBytes: number;
   /** Last-modification time, epoch ms. */
   mtimeMs: number;
+  /** Whether the path is a regular file. */
   isFile: boolean;
+  /** Whether the path is a directory. */
   isDirectory: boolean;
 };
 
+/**
+ * The filesystem capability seam — the one sanctioned filesystem-access surface.
+ * Wrap {@link defaultFileSystem} to add caching, hashing, or read-provenance
+ * without every caller re-implementing `node:fs`.
+ */
 export interface FileSystem {
   /** Stat a path; `null` when it does not exist (or is unreadable). */
   statPath(path: string): FileStat | null;
@@ -34,6 +42,7 @@ export interface FileSystem {
   removeFile(path: string): void;
 }
 
+/** The default {@link FileSystem}, backed directly by `node:fs`. */
 export const defaultFileSystem: FileSystem = {
   statPath(path) {
     try {
