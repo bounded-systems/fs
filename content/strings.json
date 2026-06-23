@@ -1,0 +1,10 @@
+{
+  "name": {
+    "type": "name",
+    "value": "fs"
+  },
+  "description": {
+    "type": "meta",
+    "value": "Filesystem capability seam; the one allowed filesystem-access point with an injectable FileSystem"
+  }
+}
