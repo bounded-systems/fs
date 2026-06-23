@@ -5,6 +5,10 @@
   },
   "description": {
     "type": "meta",
-    "value": "Filesystem capability seam; the one allowed filesystem-access point with an injectable FileSystem"
+    "value": "The filesystem capability seam — the one allowed filesystem-access point, behind an injectable FileSystem.  Production code depends on the FileSystem interface, not on node:fs directly.  The default implementation is the real filesystem; a test (or a sandbox) injects its own, …"
+  },
+  "keywords": {
+    "type": "body",
+    "value": "FILESYSTEM · CAPABILITY · SEAM · INJECTABLE · FS"
   }
 }
